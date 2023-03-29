@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ViewUser from './components/ViewUser'
+import NumberList from './components/NumberList'
 import './App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
 	return (
 		<div className="App">
+		<NumberList />
 		{data.map(user => (
 			<ViewUser key={user.email} name={user.name} email={user.email} />
 		))}
