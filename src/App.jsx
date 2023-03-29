@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ViewUser from './components/ViewUser'
 import NumberList from './components/NumberList'
 import Orderly from './components/Orderly'
+import ProductList from './components/ProductList'
 import './App.css'
 
 function App() {
@@ -15,13 +16,17 @@ function App() {
 
 	return (
 		<div className="App">
+			<ProductList />
+
 			{orderlyList.map(n => (
 				<Orderly key={n} value={n} />
 			))}
-		<NumberList />
-		{data.map(user => (
-			<ViewUser key={user.email} name={user.name} email={user.email} />
-		))}
+
+			<NumberList />
+
+			{data.map(user => (
+				<ViewUser key={user.email} name={user.name} email={user.email} />
+			))}
 		</div>
 	)
 }
